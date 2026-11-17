@@ -1,0 +1,11 @@
+{
+  "case_id": "BASE-002",
+  "model": "gemini-3.5-flash-lite",
+  "facts": {
+    "decision": "NOT_READY",
+    "pickup_promised": false,
+    "reason": "Order not confirmed ready for pickup",
+    "order_status": "PROCESSING"
+  },
+  "explanation": "Pickup is not available yet."
+}

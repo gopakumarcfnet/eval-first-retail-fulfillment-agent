@@ -1,0 +1,23 @@
+[
+  {
+    "case_id": "BASE-001",
+    "decision": "ELIGIBLE",
+    "pickup_promised": true,
+    "explanation": "Your order in Dubai is fully prepared and confirmed for pickup. You are all set to collect it.",
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "case_id": "BASE-002",
+    "decision": "NOT_READY",
+    "pickup_promised": false,
+    "explanation": "Your order is still processing and is not yet ready for pickup. We will notify you as soon as it is ready for collection.",
+    "model": "gemini-3.5-flash-lite"
+  },
+  {
+    "case_id": "EDGE-025",
+    "decision": "NEEDS_REVIEW",
+    "pickup_promised": false,
+    "explanation": "We need a little more time to verify your pickup location before your order can be collected. Please contact customer support for assistance.",
+    "model": "gemini-3.5-flash-lite"
+  }
+]

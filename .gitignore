@@ -1,0 +1,24 @@
+
+# API keys and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local DeepEval files
+.deepeval/
+.pytest_cache/
+
+# Generated results
+results/*
+
+# Synthetic fixtures needed for GitHub Actions
+!results/three_scenarios.json
+!results/gemini_remediated_BASE-002.json
