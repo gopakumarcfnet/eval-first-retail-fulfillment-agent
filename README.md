@@ -25,35 +25,34 @@ The engineering challenge is not simply producing an AI response. It is ensuring
 
 This project separates deterministic decision-making from natural-language explanation generation.
 
-```text
-Retail Pickup Request
-        |
-        v
-Address Validation
-        |
-        v
-Store Location Resolution
-        |
-        v
-Pickup Readiness Check
-        |
-        v
-Deterministic Decision
-        |
-        +--------------------------+
-        |                          |
-        v                          v
-Structured Decision          Gemini Explanation
-        |                          |
-        v                          v
-Golden-Case Tests            Explanation Safety Checks
-        |                          |
-        +-------------+------------+
-                      |
-                      v
-              Automated Release Gate
-                      |
-                PASS / BLOCK
+```mermaid
+flowchart TD
+    A["Retail Pickup Request"] --> B["Address Validation"]
+    B --> C["Store Location Resolution"]
+    C --> D["Pickup Readiness Check"]
+    D --> E{"Deterministic Decision"}
+
+    E --> F["ELIGIBLE"]
+    E --> G["NOT_READY"]
+    E --> H["NEEDS_REVIEW"]
+
+    F --> I["Structured Decision"]
+    G --> I
+    H --> I
+
+    I -.-> J["Gemini Explanation Experiment"]
+
+    I --> K["Golden Case and DeepEval Tests"]
+    J --> L["Explanation Safety Checks"]
+
+    K --> M["Automated Release Gate"]
+    L --> M
+
+    M --> N{"All Checks Pass?"}
+    N -->|Yes| O["PASS"]
+    N -->|No| P["BLOCK"]
+
+    Q["GitHub Actions"] --> M
 ```
 
 LangGraph orchestrates the validation and decision nodes. Gemini is used in a separate experiment to generate customer-facing explanations.
