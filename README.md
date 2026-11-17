@@ -293,6 +293,13 @@ The revised response passed the configured safety rules.
 
 ### CI/CD Evidence
 
+### Automated Release Gate — GitHub Actions
+
+The following screenshot shows the successful execution of all three automated evaluation checks.
+
+![GitHub Actions Release Gate — PASS](Release_Gate_Success.png)
+
+
 [View GitHub Actions evaluation runs](https://github.com/gopakumarcfnet/eval-first-retail-fulfillment-agent/actions)
 
 The release gate executes deterministic tests and evaluates saved Gemini explanations. A failing check produces a nonzero exit code and fails the workflow.
